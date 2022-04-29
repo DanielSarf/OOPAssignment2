@@ -26,24 +26,17 @@ public:
 
 	void setDay(int inputDay)
 	{
-		day = inputDay;
+		parseDays(inputDay);
 	}
 
 	void operator++()
 	{
-		day++;
+		parseDays(day + 1);
+	}
 
-		if (day > 31)
-		{
-			day = 1;
-			month++;
-		}
-
-		if (month > 12)
-		{
-			month = 1;
-			year++;
-		}
+	void operator++(int)
+	{
+		parseDays(day + 1);
 	}
 
 	int getDay() const
@@ -53,7 +46,7 @@ public:
 
 	void setMonth(int inputMonth)
 	{
-		month = inputMonth;
+		parseMonths(inputMonth);
 	}
 
 	int getMonth() const
@@ -69,6 +62,33 @@ public:
 	int getYear() const
 	{
 		return year;
+	}
+
+	void parseDays(int inputDay)
+	{
+		if ((inputDay > 30 && month == 4) || (inputDay > 30 && month == 6) || (inputDay > 30 && month == 9) || (inputDay > 30 && month == 11) || 
+			(inputDay > 28 && month == 2 && year % 4 == 0) || (inputDay > 29 && month == 2 && year % 4 != 0) || (inputDay > 31))
+		{
+			day = 1;
+			setMonth(month + 1);
+		}
+		else
+		{
+			day++;
+		}
+	}
+
+	void parseMonths(int inputMonth)
+	{
+		if (inputMonth > 12)
+		{
+			month = 1;
+			year++;
+		}
+		else
+		{
+			month++;
+		}
 	}
 };
 
@@ -145,7 +165,7 @@ public:
 	}
 };
 
-date Test::dm1(3, 1, 2001);
+date Test::dm1(4, 11, 2001);
 
 int main()
 {
