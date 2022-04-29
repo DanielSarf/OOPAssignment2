@@ -67,7 +67,7 @@ public:
 	void parseDays(int inputDay)
 	{
 		if ((inputDay > 30 && month == 4) || (inputDay > 30 && month == 6) || (inputDay > 30 && month == 9) || (inputDay > 30 && month == 11) || 
-			(inputDay > 28 && month == 2 && year % 4 == 0) || (inputDay > 29 && month == 2 && year % 4 != 0) || (inputDay > 31))
+			(inputDay > 29 && month == 2 && year % 4 == 0) || (inputDay > 28 && month == 2 && year % 4 != 0) || (inputDay > 31))
 		{
 			day = 1;
 			setMonth(month + 1);
