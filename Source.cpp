@@ -15,7 +15,7 @@ Using the concepts studied in course, enforce the constraint on functions that a
 
 using namespace std;
 
-class date
+class Date
 {
 private:
 	int day;
@@ -23,7 +23,7 @@ private:
 	int year;
 
 public:
-	date(int inputDay, int inputMonth, int inputYear) : day(inputDay), month(inputMonth), year(inputYear) {};
+	Date(int inputDay, int inputMonth, int inputYear) : day(inputDay), month(inputMonth), year(inputYear) {};
 
 	//Function takes int and sends it for parsing to set day
 	void setDay(int inputDay)
@@ -108,7 +108,7 @@ public:
 class Test
 {
 private:
-	static date dm1;
+	static Date dm1;
 	int dm2;
 	float dm3;
 	string dm4;
@@ -191,7 +191,7 @@ public:
 };
 
 //Initalizes static data member dm1 in Test class
-date Test::dm1(4, 11, 2001);
+Date Test::dm1(4, 11, 2001);
 
 int main()
 {
