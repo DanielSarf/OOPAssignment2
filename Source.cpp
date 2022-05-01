@@ -189,7 +189,7 @@ public:
 };
 
 //Initalizes static data member dm1 in Test class
-Date Test::dm1(4, 11, 2001);
+Date Test::dm1(3, 1, 2001);
 
 int main()
 {
