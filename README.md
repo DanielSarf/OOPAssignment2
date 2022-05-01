@@ -15,8 +15,10 @@ Using the concepts studied in course, enforce the constraint on functions that a
 
 
 The UML Diagram:
+
 ![alt text](https://github.com/DanielSarf/OOPAssignment2/blob/main/pictures/OOP%20Assignment%202%20UML%20Diagram.png?raw=true)
 
 
 The screenshot of the Output:
+
 ![alt text](https://github.com/DanielSarf/OOPAssignment2/blob/main/pictures/OOP%20Assignment%202%20Screenshot%201.jpeg?raw=true)
