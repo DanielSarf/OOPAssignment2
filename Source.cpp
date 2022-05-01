@@ -12,56 +12,67 @@ Using the concepts studied in course, enforce the constraint on functions that a
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include <conio.h>
+
 using namespace std;
+
 class Date
 {
 private:
 	int day;
 	int month;
 	int year;
+
 public:
 	Date(int inputDay, int inputMonth, int inputYear) : day(inputDay), month(inputMonth), year(inputYear) {};
+
 	//Function takes int and sends it for parsing to set day
 	void setDay(int inputDay)
 	{
 		parseDays(inputDay);
 	}
+
 	//Function increments day by one and sends value for parsing to set day
 	void operator++()
 	{
 		parseDays(day + 1);
 	}
+
 	//Function increments day by one and sends value for parsing to set day
 	void operator++(int)
 	{
 		parseDays(day + 1);
 	}
+
 	//Returns value of day
 	int getDay() const
 	{
 		return day;
 	}
+
 	//Function takes int and sends it for parsing to set month
 	void setMonth(int inputMonth)
 	{
 		parseMonths(inputMonth);
 	}
+
 	//Returns value of month
 	int getMonth() const
 	{
 		return month;
 	}
+
 	//Function takes int and sets year to it
 	void setYear(int inputYear)
 	{
 		year = inputYear;
 	}
+
 	//Returns value of year
 	int getYear() const
 	{
 		return year;
 	}
+
 	//Function takes int and parses it to determine if the day number is valid for the current month
 	void parseDays(int inputDay)
 	{
@@ -78,6 +89,7 @@ public:
 			day = inputDay;
 		}
 	}
+
 	void parseMonths(int inputMonth)
 	{
 		//A year can not have more than 12 months
@@ -99,6 +111,7 @@ private:
 	int dm2;
 	float dm3;
 	string dm4;
+
 public:
 	//Constructor calls dm1Modify(), innitializes dm2 and dm3 to 0 and sets dm4 to empty string
 	Test()
@@ -109,46 +122,55 @@ public:
 		dm3 = 0;
 		dm4.assign("");
 	}
+
 	//Function increments date by 1 day
 	static void dm1Modify()
 	{
 		dm1++;
 	}
+
 	//Functions takes int and sets dm2 to it
 	void setDm2(int inputDm2)
 	{
 		inputDm2 = dm2;
 	}
+
 	//Function returns the value of dm2
 	int getDm2() const
 	{
 		return dm2;
 	}
+
 	//Functions takes float and sets dm2 to it
 	void setDm3(float inputDm3)
 	{
 		inputDm3 = dm3;
 	}
+
 	//Function returns the value of dm3
 	float getDm3() const
 	{
 		return dm3;
 	}
+
 	//Functions takes string and sets dm4 to it
 	void setDm4(string inputDm4)
 	{
 		dm4.assign(inputDm4);
 	}
+
 	//Function returns dm4 string
 	string getDm4() const
 	{
 		return dm4;
 	}
+
 	//Function prints dm1 date in DD/MM/YYYY format
 	static void printDm1() 
 	{
 		cout << setfill('0') << setw(2) << dm1.getDay() << "-" << setw(2) << dm1.getMonth() << "-" << setw(4) << dm1.getYear() << endl << endl;;
 	}
+
 	//Function prints dm1 date in DD/MM/YYYY format, dm2, dm3 and dm4
 	void print() const
 	{
@@ -157,17 +179,15 @@ public:
 		cout << "dm3: " << dm3 << endl;
 		cout << "dm4: " << dm4 << endl;
 	}
+
 	//Destructor calls dm1Modify() and calls printDm1;
 	~Test()
 	{
 		dm1Modify();
 		cout << "Date modified by destructor: "; printDm1();
-
-		cout << endl << endl << "Assignment prepared by: " << endl;
-		cout << "Daniel Sarfraz: 01-134212-035" << endl;
-		cout << "Mughees Tariq: 01-134212-093" << endl;
 	}
 };
+
 //Initalizes static data member dm1 in Test class
 Date Test::dm1(4, 11, 2001);
 
@@ -179,7 +199,11 @@ int main()
 	obj.dm1Modify();
 	cout << "Date modified by dm1Modify() : "; obj.printDm1();
 	
+	cout << endl << endl << "Assignment prepared by: " << endl;
+	cout << "Daniel Sarfraz: 01-134212-035" << endl;
+	cout << "Mughees Tariq: 01-134212-093" << endl;
 
-	_getch();
 	return 0;
+
+	system("pause>0");
 }
